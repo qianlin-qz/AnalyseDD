@@ -1,0 +1,11 @@
+Package: AnalyseDD
+Type: Package
+Title: Use R to analyze data with ACP (main correspondence analysis) and AFC
+    (factorial correspondence analysis)
+Version: 0.1.0
+Author: Qianlin ZHANG
+Maintainer: Qianlin ZHANG <qianlin.qz@gmail.com>
+Description: To quickly analyse data with methodes that I learn in the lecture
+License: GPL-3
+LazyData: TRUE
+RoxygenNote: 5.0.1

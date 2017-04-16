@@ -1,0 +1,79 @@
+---
+title: "AFC"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Presentation des r¨¦sultats
+Le package contient un base de donn¨¦e concernant le choix d'h¨¦bergement pour les vacances intitul¨¦ "heb". <br />
+
+```{r,  echo=2}
+library(AnalyseDD)
+heb
+```
+
+Ce base de donn¨¦e est avec totaux. Il y a une autre base de donn¨¦e intitul¨¦ "comp" qui est sans totaux. <br />
+```{r, echo=2}
+library(AnalyseDD)
+comp
+```
+Les fonctions de ce package ajouter les totaux automatiquement, donc pour utliser ces fonction, il exige une base de donn¨¦e sans totaux. <br />
+Dans la suite de d¨¦monstration de function je vais tester sur "comp".
+Pour ajouter les totaux : 
+```{r}
+total(comp)
+```
+Table des profils lignes : 
+```{r}
+tabProLigne(comp)
+```
+Table des profils colonnes : 
+```{r}
+tabProColonne(comp)
+```
+Table des valeurs th¨¦oriques : 
+```{r}
+tabValTheo(comp)
+```
+Pour mesurer la liason entre deux varaibles qalitatives, on utilise un test de chiq2 :
+```{r}
+d2(comp)
+```
+Tableau de contributions au khi-2 : 
+```{r}
+contrX2(comp)
+```
+Table de fr¨¦quence : 
+```{r}
+tabFreq(comp)
+```
+Centre gravite de colonnes : 
+```{r}
+gcol(comp)
+```
+Valeurs propres servent ¨¤ choisir le nombre des axes pour pr¨¦senter le graphique. Vecteurs propres servent ¨¤ calculer les condonn¨¦es.
+```{r}
+valeurp(comp)
+vecteurp(comp)
+```
+Coordonnees des profils-lignes :
+```{r}
+coProLigne(comp)
+```
+Coordonnees des profils-colonnes : 
+```{r}
+coProColonne(comp)
+```
+Graphiques finales : 
+```{r}
+plotAFC(comp)
+```
+Une autre demonstation avec la base de donn¨¦e heb :
+```{r}
+h <- heb[1:4, 1:4]
+plotAFC(h)
+```
